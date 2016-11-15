@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{38256797-4988-F7FB-5B10-3A02A4D34540}</ProjectGuid>
+    <ProjectGuid>{2E44A512-C6F5-3B4E-1630-0EC56FFEA4AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\OVR\Editor\OVRBuild.cs" />
+     <Compile Include="Assets\OVR\Editor\OVRMoonlightLoader.cs" />
+     <Compile Include="Assets\OVR\Editor\OVRScreenshotWizard.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Editor\TutorialInfoEditor.cs" />
      <Compile Include="Assets\_CompletedAssets\MobileInput\Scripts\Editor\CrossPlatformInputInitialize.cs" />
      <Compile Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Editor\ColorCorrectionCurvesEditor.cs" />
@@ -53,7 +56,10 @@
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <None Include="Assets\TutorialInfo\Fonts\LICENSE.txt" />
+     <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\OVR\Shaders\Unlit Crosshair.shader" />
+     <None Include="Assets\OVR\Resources\Unlit Transparent Color.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\_CompletedAssets\SampleAssets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
@@ -106,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{17904BC8-8443-BFB9-3D6C-542E5168948C}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{AC272EEC-C4B4-95B7-B054-3DE1E76FEB4B}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
