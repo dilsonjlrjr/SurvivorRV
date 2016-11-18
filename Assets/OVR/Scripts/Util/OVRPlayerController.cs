@@ -221,11 +221,19 @@ public class OVRPlayerController : MonoBehaviour
 	{
 		if (HaltUpdateMovement)
 			return;
+		
+		//quadrado
+//		Debug.Log(Input.GetKey("joystick button 3"));
 
-		bool moveForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow);
-		bool moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow);
-		bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
-		bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+//		Debug.Log(Input.GetAxis("HorizontalX"));
+//		Debug.Log(Input.GetAxis("VerticalX"));
+
+
+
+		bool moveForward = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || (Input.GetAxis("VerticalSetas") == -1 ? true : false) || (Input.GetAxis("VerticalX") == -1 ? true : false);
+		bool moveLeft = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || (Input.GetAxis("HorizontalSetas") == -1 ? true : false) || (Input.GetAxis("HorizontalX") == -1 ? true : false);
+		bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || (Input.GetAxis("HorizontalSetas") == 1 ? true : false) || (Input.GetAxis("HorizontalX") == 1 ? true : false);
+		bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || (Input.GetAxis("VerticalSetas") == 1 ? true : false) || (Input.GetAxis("VerticalX") == 1 ? true : false);
 
 		bool dpad_move = false;
 
@@ -258,7 +266,7 @@ public class OVRPlayerController : MonoBehaviour
 		float moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
 		// Run!
-		if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+		if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey("joystick button 3"))
 			moveInfluence *= 2.0f;
 
 		Quaternion ort = transform.rotation;

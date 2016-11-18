@@ -43,7 +43,9 @@ namespace CompleteProject
 
             // If the Fire1 button is being press and it's time to fire...
             //Input.GetButton ("Fire1")
-            if (Input.GetKey(KeyCode.KeypadEnter) && timer >= timeBetweenBullets && Time.timeScale != 0)
+
+			bool fire = (Input.GetKey ("joystick button 2") || Input.GetButton ("Fire1") || Input.GetKey (KeyCode.F));
+            if (fire && timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 // ... shoot the gun.
                 Shoot ();
